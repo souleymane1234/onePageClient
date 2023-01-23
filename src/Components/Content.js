@@ -6,9 +6,9 @@ import React, { useEffect, useState } from 'react';
 
    React.useEffect(() => {
       const path = new URLSearchParams(window.location.search);
-      setUserId(path.get('id'));
+      console.log(path.get('id'));
 
-   }, [])
+   }, [userId])
 
 
 //    React.useEffect(() => {
@@ -26,14 +26,17 @@ import React, { useEffect, useState } from 'react';
 // }, [])
    useEffect(() => {
    var formdata = new FormData();
-    formdata.append("id", userId);
-      fetch("http://localhost:5000/api/singleUsers/" + userId)
+   const path = new URLSearchParams(window.location.search);
+   const val = (path.get('id'));
+    formdata.append("id", val);
+      fetch("https://pleasant-shirt-bass.cyclic.app/api/singleUsers/" + val)
       .then(
          Response => Response.json()
       )
       .then(data => {
          setBackendData(data)
          console.log("ma dataaaaaaaaaaa", data)
+         console.log("mo ", val)
       })
    }, [])
 
