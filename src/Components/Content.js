@@ -26,8 +26,8 @@ import React, { useEffect, useState } from 'react';
 // }, [])
    useEffect(() => {
    var formdata = new FormData();
-   // formdata.append("id", userId);
-      fetch("/api/allUsers")
+    formdata.append("id", userId);
+      fetch("http://localhost:5000/api/singleUsers/" + userId)
       .then(
          Response => Response.json()
       )
