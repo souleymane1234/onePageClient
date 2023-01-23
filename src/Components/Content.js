@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 
   function Content() {
    const [backendData, setBackendData] = useState([{}])
+   const [id, setId] = useState('');
+   const path = window.location.pathname;
+   console.log("first", path);
+   const newurl = window.location.protocol + "//" + window.location.host;
+   window.history.pushState({path:newurl});
 
 //    React.useEffect(() => {
 
@@ -18,8 +23,8 @@ import React, { useEffect, useState } from 'react';
 // }, [])
    useEffect(() => {
    var formdata = new FormData();
-   formdata.append("id", "63ccaf78e6a78db81cc5cdb1");
-      fetch("/api/singleUsers/" + "63ccaf78e6a78db81cc5cdb1")
+   formdata.append("id", window.location.pathname);
+      fetch("/api/singleUsers/" + window.location.pathname)
       .then(
          Response => Response.json()
       )
@@ -27,6 +32,11 @@ import React, { useEffect, useState } from 'react';
          setBackendData(data)
          console.log("ma dataaaaaaaaaaa", data)
       })
+   }, [])
+
+   useEffect(() => {
+      setId(window.location.pathname);
+
    }, [])
     return (
        <div>
