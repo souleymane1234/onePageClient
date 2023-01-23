@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 
   function Content() {
    const [backendData, setBackendData] = useState([{}])
-   const [id, setId] = useState('');
+   const [userId, setUserId] = useState('');
 
+   React.useEffect(() => {
+      const path = new URLSearchParams(window.location.search);
+      setUserId(path.get('id'));
 
+   }, [])
 
 
 //    React.useEffect(() => {
 
 // var formdata = new FormData();
-// formdata.append("id", "63ccb405e6a78db81cc5cdcc");
+// formdata.append("id", userId);
 
-// fetch("/api/singlebackendDatas/63ccb405e6a78db81cc5cdcc")
+// fetch("/api/singleUsers/" + userId)
 //   .then(response => response.json())
 //   .then(data => {
 //    setBackendData(data)
@@ -22,8 +26,8 @@ import React, { useEffect, useState } from 'react';
 // }, [])
    useEffect(() => {
    var formdata = new FormData();
-   formdata.append("id", window.location.pathname);
-      fetch("/api/singleUsers/" + window.location.pathname)
+   // formdata.append("id", userId);
+      fetch("/api/allUsers")
       .then(
          Response => Response.json()
       )
@@ -33,10 +37,10 @@ import React, { useEffect, useState } from 'react';
       })
    }, [])
 
-   useEffect(() => {
-      setId(window.location.pathname);
+   // useEffect(() => {
+   //    setId(window.location.pathname);
 
-   }, [])
+   // }, [])
     return (
        <div>
             <div>
