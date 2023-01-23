@@ -4,16 +4,17 @@ import React, { useEffect, useState } from 'react';
    const [backendData, setBackendData] = useState([{}])
    const [id, setId] = useState('');
 
-   React.useEffect(() => {
-      const path = window.location.pathname;
-      console.log("first", path);
+   // React.useEffect(() => {
+   //    const path = new URLSearchParams(window.location.search);
+   //    const userId = path.get('id')
+   //    console.log("id", userId);
 
-   }, [])
+   // }, [])
 
 
    
-   const newurl = window.location.protocol + "//" + window.location.host;
-   window.history.pushState({path:newurl});
+   // const newurl = window.location.protocol + "//" + window.location.host;
+   // window.history.pushState({urlPath:newurl},"",newurl);
 
 //    React.useEffect(() => {
 
