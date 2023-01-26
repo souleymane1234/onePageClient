@@ -8,7 +8,7 @@ function Footer()
              <div class="container">
                <div class="row">  
                 <div class="col-sm-12">
-                  <h6 class="text-white text-center mb-3 mt-3">Copyright @ Loreal Ipsom Rights Reserved</h6>
+                  <h6 class="text-white text-center mb-3 mt-3">Copyright @ Agence Image</h6>
                   </div>  
                </div>
              </div>    

@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState  } from 'react';
+import ClipLoader from "react-spinners/ClipLoader";
+
+
 
   function Content() {
    const [backendData, setBackendData] = useState([{}])
    const [userId, setUserId] = useState('');
+   const [loading, setLoading] = useState(true);
 
    React.useEffect(() => {
       const path = new URLSearchParams(window.location.search);
@@ -37,6 +41,7 @@ import React, { useEffect, useState } from 'react';
          setBackendData(data)
          console.log("ma dataaaaaaaaaaa", data)
          console.log("mo ", val)
+         setLoading(!loading)
       })
    }, [])
 
@@ -44,6 +49,17 @@ import React, { useEffect, useState } from 'react';
    //    setId(window.location.pathname);
 
    // }, [])
+   useEffect(()=> {
+    setTimeout(() => {
+      setLoading(!loading);
+    }, 3000);
+   }, []);
+   const load =  <ClipLoader
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
     return (
        <div>
             <div>
@@ -52,13 +68,13 @@ import React, { useEffect, useState } from 'react';
               <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                     <img className="d-block w-100" src={backendData.imageCouverture} alt="First slide" style={{height:"auto"}}/>
+                     <img className="d-block w-100" src={backendData.imageCouverture1} alt="First slide" style={{height:"auto"}}/>
                   </div>
                   <div className="carousel-item">
-                     <img className="d-block w-100" src={backendData.imageCouverture} alt="Second slide" style={{height:"auto"}}/>
+                     <img className="d-block w-100" src={backendData.imageCouverture2} alt="Second slide" style={{height:"auto"}}/>
                   </div>
                   <div className="carousel-item">
-                     <img className="d-block w-100" src={backendData.imageCouverture} alt="Third slide" style={{height:"auto"}}/>
+                     <img className="d-block w-100" src={backendData.imageCouverture3} alt="Third slide" style={{height:"auto"}}/>
                   </div>
                 </div>
                </div>
@@ -68,7 +84,7 @@ import React, { useEffect, useState } from 'react';
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-md-12">
-                 <h3 className="text-center mt-4 text-secondary">Know about us</h3>
+                 <h3 className="text-center mt-4 text-secondary">Qui sommes nous</h3>
                </div>
               </div>
              <div className="row">
@@ -81,11 +97,11 @@ import React, { useEffect, useState } from 'react';
          <div className="container">
              <div className="row">
               <div className="col-sm-12 col-md-12">
-                 <h3 className="text-center mt-4 text-secondary">Favourite Destinations</h3>
+                 <h3 className="text-center mt-4 text-secondary">Destinations Favorite</h3>
                </div>
               </div>
               <div className="row">
-                 <div className="col-sm-4 mb-5">
+                 <div className="col-sm-6 mb-5">
                     <div className="card mt-4">
                        <img className="card-img-top" src={backendData.presentation1Image} alt=""/>
                        <div className="card-body">
@@ -93,11 +109,11 @@ import React, { useEffect, useState } from 'react';
                           <p className="card-text text-secondary">{backendData.presentation1Description}</p>
                        </div>
                        <div className="card-footer">
-                          <a href="#" className="btn btn-primary">Find Out More!</a>
+                          <a href="#" className="btn btn-primary">Voir plus!</a>
                        </div>
                     </div>
                  </div>
-                 <div className="col-sm-4 mb-5">
+                 <div className="col-sm-6 mb-5">
                     <div className="card mt-4">
                        <img className="card-img-top" src={backendData.presentation2Image} alt=""/>
                        <div className="card-body">
@@ -105,19 +121,7 @@ import React, { useEffect, useState } from 'react';
                           <p className="card-text text-secondary">{backendData.presentation2Description}</p>
                        </div>
                        <div className="card-footer">
-                          <a href="#" className="btn btn-primary">Find Out More!</a>
-                       </div>
-                    </div>
-                 </div>
-                 <div className="col-sm-4 mb-5">
-                    <div className="card mt-4">
-                       <img className="card-img-top" src={backendData.presentation3Image} alt=""/>
-                       <div className="card-body">
-                          <h4 className="card-title text-secondary">{backendData.presentation3Titre}</h4>
-                          <p className="card-text text-secondary">{backendData.presentation3Description}</p>
-                       </div>
-                       <div className="card-footer">
-                          <a href="#" className="btn btn-primary">Find Out More!</a>
+                          <a href="#" className="btn btn-primary">Voir plus!</a>
                        </div>
                     </div>
                  </div>
