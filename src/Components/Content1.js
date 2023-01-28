@@ -1,6 +1,5 @@
 import React, { useEffect, useState  } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
-import "./style.css";
 
 
 
@@ -69,99 +68,32 @@ import "./style.css";
               <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerfirst.jpg')} alt="First slide" style={{height:"auto"}}/>
+                     <img className="d-block w-100" src={backendData.imageCouverture1} alt="First slide" style={{height:"auto"}}/>
+                  </div>
+                  <div className="carousel-item">
+                     <img className="d-block w-100" src={backendData.imageCouverture2} alt="Second slide" style={{height:"auto"}}/>
+                  </div>
+                  <div className="carousel-item">
+                     <img className="d-block w-100" src={backendData.imageCouverture3} alt="Third slide" style={{height:"auto"}}/>
                   </div>
                 </div>
                </div>
         </section>   
 
-        <section className="bg-white" id="about">
+        <section className="bg-light" id="about">
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-md-12">
-                 <h2 className="text-center mt-4 text-secondary">Avec nous votre page web c'est</h2>
-               </div>
-              </div> 
-          </div>   
-        </section>  
-
-      <section className="">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerseconde.jpg')} alt="First slide" style={{height:"auto"}}/>
-                  </div>
-                </div>
-               </div>
-        </section>
-
-      <section className="">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerfird.jpg')} alt="First slide" style={{height:"auto"}}/>
-                  </div>
-                </div>
-               </div>
-        </section>
-
-      <section  id="about">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h3 className="text-center mt-4 text-secondary">Remplissez le formulaire</h3>
+                 <h3 className="text-center mt-4 text-secondary">Qui sommes nous</h3>
                </div>
               </div>
-              <div>
-                   <form>
-                     <div className='divForm1'>
-                        <div>
-                           <label>Nom et Prenom</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                        <div className=''>
-                           <label>Téléphone</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                     </div>
-                     <div className='divForm2'>
-                        <div className=''>
-                           <label>Entreprise</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                        <div className=''>
-                           <label>Email</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                     </div>
-                  </form>
-                  <div className='login'>Envoyer</div>
-              </div>
-          </div>   
-      </section>  
-      
-        <section className="bg-white" id="about">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h2 className="text-center mt-4 text-secondary text-success">ILS NOUS FONT CONFIANCE</h2>
-               </div>
-              </div>
-               <div className="row" id="imageBox">
-                 <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./sofitel.png')} alt="logo 1"/>
-                 </div>
-                  <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./KFCLogo.png')} alt="logo 2"/>
-                 </div>
-                  <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./burgeur.png')} alt="logo 3"/>
-                 </div>
-              </div>
+             <div className="row">
+                <p className="mt-4 mb-5">{backendData.textBienvenue}</p>
+             </div>   
           </div>   
         </section>   
 
-        {/* <section className="" id="destinations">   
+        <section className="" id="destinations">   
          <div className="container">
              <div className="row">
               <div className="col-sm-12 col-md-12">
@@ -171,7 +103,7 @@ import "./style.css";
               <div className="row">
                  <div className="col-sm-6 mb-5">
                     <div className="card mt-4">
-                       <img className="card-img-top" src="/public/Images/bannerfirst.jpg" alt=""/>
+                       <img className="card-img-top" src={backendData.presentation1Image} alt=""/>
                        <div className="card-body">
                           <h4 className="card-title text-secondary">{backendData.presentation1Titre}</h4>
                           <p className="card-text text-secondary">{backendData.presentation1Description}</p>
@@ -195,7 +127,7 @@ import "./style.css";
                  </div>
               </div>
         </div>
-       </section>   */}
+       </section>  
 
 
    </div>
