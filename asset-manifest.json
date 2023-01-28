@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/onePageClient/static/css/main.11b0e1a4.css",
-    "main.js": "/onePageClient/static/js/main.47898256.js",
+    "main.css": "/onePageClient/static/css/main.297be04f.css",
+    "main.js": "/onePageClient/static/js/main.75136335.js",
     "static/js/787.70323090.chunk.js": "/onePageClient/static/js/787.70323090.chunk.js",
+    "static/media/burgeur.png": "/onePageClient/static/media/burgeur.aacefa9328cec5fffaea.png",
+    "static/media/bannerfird.jpg": "/onePageClient/static/media/bannerfird.d617b318916c2cc2bffc.jpg",
+    "static/media/bannerseconde.jpg": "/onePageClient/static/media/bannerseconde.ae96ac1cacb4a193b2eb.jpg",
+    "static/media/bannerfirst.jpg": "/onePageClient/static/media/bannerfirst.f09fc47af0307d6b43bc.jpg",
+    "static/media/KFCLogo.png": "/onePageClient/static/media/KFCLogo.feb0ed751d932a4931db.png",
     "index.html": "/onePageClient/index.html",
-    "main.11b0e1a4.css.map": "/onePageClient/static/css/main.11b0e1a4.css.map",
-    "main.47898256.js.map": "/onePageClient/static/js/main.47898256.js.map",
+    "main.297be04f.css.map": "/onePageClient/static/css/main.297be04f.css.map",
+    "main.75136335.js.map": "/onePageClient/static/js/main.75136335.js.map",
     "787.70323090.chunk.js.map": "/onePageClient/static/js/787.70323090.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11b0e1a4.css",
-    "static/js/main.47898256.js"
+    "static/css/main.297be04f.css",
+    "static/js/main.75136335.js"
   ]
 }
