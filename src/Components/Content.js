@@ -1,6 +1,8 @@
 import React, { useEffect, useState  } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
-import "./style.css";
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 
@@ -11,7 +13,7 @@ import "./style.css";
 
    React.useEffect(() => {
       const path = new URLSearchParams(window.location.search);
-      console.log(path.get('id'));
+      console.log(path.get('nom'));
 
    }, [userId])
 
@@ -32,8 +34,8 @@ import "./style.css";
    useEffect(() => {
    var formdata = new FormData();
    const path = new URLSearchParams(window.location.search);
-   const val = (path.get('id'));
-    formdata.append("id", val);
+   const val = (path.get('nom'));
+    formdata.append("nom", val);
       fetch("https://pleasant-shirt-bass.cyclic.app/api/singleUsers/" + val)
       .then(
          Response => Response.json()
@@ -63,142 +65,145 @@ import "./style.css";
       />
     return (
        <div>
-            <div>
+             <Navbar>
+      <Container>
+        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        <Navbar.Toggle />
+        <div style={{marginLeft: "20px"}}>
+            <a href="#home"><img href="#home" src={require('./face.png')} alt="First slide" style={{width:"25px"}}/></a>
+            <a href="#home"><img href="#home" src={require('./insta.png')} alt="First slide" style={{width:"25px"}}/></a>
+        </div>
+      </Container>
+    </Navbar>
               
          <section className="">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerfirst.jpg')} alt="First slide" style={{height:"auto"}}/>
-                  </div>
-                </div>
-               </div>
+              <Carousel>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src={backendData.imageCouverture1}
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item interval={500}>
+        <img
+          className="d-block w-100"
+          src={backendData.imageCouverture1}
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={backendData.imageCouverture1}
+          alt="Third slide"
+        />
+      </Carousel.Item>
+    </Carousel>
         </section>   
 
-        <section className="bg-white" id="about">
+        <section className="section1">
           <div className="container">
+            <div className='containerSection1'>
+            <div className="textBienvenueDiv">
+               <p className='textBienvenue'>
+                  La Fondation Donwahi pour l’Art Contemporain est un lieu de rencontre entre les personnes et l’art,
+                  espace d’expression pour tous ceux qui aiment à s’y retrouver. En son sein, Le Lounge, 
+                  lieu emblématique tout aussi singulier, espace de détente et de rencontres... On peut y déjeuner,
+                  dîner, danser, boire un cocktail, mais aussi travailler. Le Lounge offre une palette de saveurs et
+                  fait rimer nature avec architecture… C’est, en quelques mots, un espace de démonstration et de création, 
+                  de formation et d’échange, de partage et d’enrichissement...</p>
+            </div>
+            <div style={{marginBottom: "30px"}}>
+               <img className='w-25 p-3' src={require('./banner-2.jpg')} alt="First slide" />
+               <img className='w-25 p-3' src={require('./banner-2.jpg')} alt="First slide" />
+               <img className='w-25 p-3' src={require('./banner-2.jpg')} alt="First slide" />
+               <img className='w-25 p-3' src={require('./banner-2.jpg')} alt="First slide" />
+            </div>
+            <div style={{marginBottom: "30px"}}>
+               <div className='boutonPdf'>Envoyer</div>
+               <div className='boutonPdf'>Envoyer</div>
+               <div className='boutonPdf'>Envoyer</div>
+            </div>
             <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h2 className="text-center mt-4 text-secondary">Avec nous votre page web c'est</h2>
+               <div className="col-sm-8 col-md-8">
+                  <img className='w-75 h-auto p-3' src={require('./banner-2.jpg')} alt="First slide" />
                </div>
-              </div> 
-          </div>   
-        </section>  
-
-      <section className="">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerseconde.jpg')} alt="First slide" style={{height:"auto"}}/>
+               <div className="col-sm-4 col-md-4">
+                  <h2>HORAIRES</h2>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-4'>
+                        <h5>LUNDI</h5>
+                     </div>
+                     <div>
+                        <p>fermé</p>
+                     </div>
                   </div>
-                </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-4'>
+                        <h5>MARDI</h5>
+                     </div>
+                     <div>
+                        <p>10:00-3:00</p>
+                     </div>
+                  </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-1'>
+                        <h5>MERCREDI</h5>
+                     </div>
+                     <div>
+                        <p>10:00-3:00</p>
+                     </div>
+                  </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-5'>
+                        <h5>JEUDI</h5>
+                     </div>
+                     <div>
+                        <p>10:00-3:00</p>
+                     </div>
+                  </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-4'>
+                        <h5>VENDREDI</h5>
+                     </div>
+                     <div>
+                        <p>10:00-3:00</p>
+                     </div>
+                  </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-4'>
+                        <h5>SAMEDI</h5>
+                     </div>
+                     <div>
+                        <p>10:00-3:00</p>
+                     </div>
+                  </div>
+                  <div className="d-flex flex-row mb-3">
+                     <div className='me-4'>
+                        <h5>DIMANCHE</h5>
+                     </div>
+                     <div>
+                        <p>fermé</p>
+                     </div>
+                  </div>
                </div>
+            </div>
+            <div>
+               <h3 className='contactText'>CONTACT</h3>
+               <p className='infoReserve'>Information & réservation</p>
+               <p className='number'>+225 27 22 41 35 42</p>
+               <p className='number'>+225 27 22 11 46 45</p>
+            </div>
+            <div>
+               <h3 className='contactText'>Lieu</h3>
+               <p className='infoReserve'>Cocody Danga</p>
+            </div>
+            </div>
+          </div>   
         </section>
 
-      <section className="">
-              <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <img className="d-block w-100" src={require('./bannerfird.jpg')} alt="First slide" style={{height:"auto"}}/>
-                  </div>
-                </div>
-               </div>
-        </section>
 
-      <section  id="about">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h3 className="text-center mt-4 text-secondary">Remplissez le formulaire</h3>
-               </div>
-              </div>
-              <div>
-                   <form>
-                     <div className='divForm1'>
-                        <div>
-                           <label>Nom et Prenom</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                        <div className=''>
-                           <label>Téléphone</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                     </div>
-                     <div className='divForm2'>
-                        <div className=''>
-                           <label>Entreprise</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                        <div className=''>
-                           <label>Email</label>
-                           <input className="ok" type="text"/>
-                        </div>
-                     </div>
-                  </form>
-                  <div className='login'>Envoyer</div>
-              </div>
-          </div>   
-      </section>  
-      
-        <section className="bg-white" id="about">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h2 className="text-center mt-4 text-secondary text-success">ILS NOUS FONT CONFIANCE</h2>
-               </div>
-              </div>
-               <div className="row" id="imageBox">
-                 <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./sofitel.png')} alt="logo 1"/>
-                 </div>
-                  <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./KFCLogo.png')} alt="logo 2"/>
-                 </div>
-                  <div className="col-sm-4 mb-5">
-                     <img className="logoPartenaire" src={require('./burgeur.png')} alt="logo 3"/>
-                 </div>
-              </div>
-          </div>   
-        </section>   
-
-        {/* <section className="" id="destinations">   
-         <div className="container">
-             <div className="row">
-              <div className="col-sm-12 col-md-12">
-                 <h3 className="text-center mt-4 text-secondary">Destinations Favorite</h3>
-               </div>
-              </div>
-              <div className="row">
-                 <div className="col-sm-6 mb-5">
-                    <div className="card mt-4">
-                       <img className="card-img-top" src="/public/Images/bannerfirst.jpg" alt=""/>
-                       <div className="card-body">
-                          <h4 className="card-title text-secondary">{backendData.presentation1Titre}</h4>
-                          <p className="card-text text-secondary">{backendData.presentation1Description}</p>
-                       </div>
-                       <div className="card-footer">
-                          <a href="#" className="btn btn-primary">Voir plus!</a>
-                       </div>
-                    </div>
-                 </div>
-                 <div className="col-sm-6 mb-5">
-                    <div className="card mt-4">
-                       <img className="card-img-top" src={backendData.presentation2Image} alt=""/>
-                       <div className="card-body">
-                          <h4 className="card-title text-secondary">{backendData.presentation2Titre}</h4>
-                          <p className="card-text text-secondary">{backendData.presentation2Description}</p>
-                       </div>
-                       <div className="card-footer">
-                          <a href="#" className="btn btn-primary">Voir plus!</a>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-        </div>
-       </section>   */}
-
-
-   </div>
    </div>
     );
   }

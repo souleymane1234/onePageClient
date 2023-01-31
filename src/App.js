@@ -9,7 +9,6 @@ import { Audio } from 'react-loader-spinner';
 function App() {
   return(
       <BrowserRouter basename='/onePageClient'>
-          <Header/>
           <Content />
           <Footer />
       </BrowserRouter>
