@@ -42,8 +42,15 @@ import Carousel from 'react-bootstrap/Carousel';
       )
       .then(data => {
          setBackendData(data)
+         
+    backendData.map((singleData) => {
+      const base64String = btoa(
+         String.fromCharCode(...new Uint8Array(singleData.logo.data.data))
+      );
+      console.log("........", base64String)
+    })
          console.log("ma dataaaaaaaaaaa", data)
-         console.log("mo ", val)
+         console.log("m ", val)
          setLoading(!loading)
       })
    }, [])
@@ -67,7 +74,7 @@ import Carousel from 'react-bootstrap/Carousel';
        <div>
              <Navbar>
       <Container>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+        <Navbar.Brand href="#home">Votre Logo</Navbar.Brand>
         <Navbar.Toggle />
         <div style={{marginLeft: "20px"}}>
             <a href="#home"><img href="#home" src={require('./face.png')} alt="First slide" style={{width:"25px"}}/></a>
@@ -75,32 +82,31 @@ import Carousel from 'react-bootstrap/Carousel';
         </div>
       </Container>
     </Navbar>
-              
-         <section className="">
+             <section className="">
               <Carousel>
       <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
-          src={backendData.imageCouverture1}
+          src={require('./banner-2.jpg')}
           alt="First slide"
         />
       </Carousel.Item>
       <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
-          src={backendData.imageCouverture1}
+          src={require('./banner-2.jpg')}
           alt="Second slide"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={backendData.imageCouverture1}
+          src={require('./banner-2.jpg')}
           alt="Third slide"
         />
       </Carousel.Item>
     </Carousel>
-        </section>   
+         </section> 
 
         <section className="section1">
           <div className="container">
@@ -121,9 +127,8 @@ import Carousel from 'react-bootstrap/Carousel';
                <img className='w-25 p-3' src={require('./banner-2.jpg')} alt="First slide" />
             </div>
             <div style={{marginBottom: "30px"}}>
-               <div className='boutonPdf'>Envoyer</div>
-               <div className='boutonPdf'>Envoyer</div>
-               <div className='boutonPdf'>Envoyer</div>
+               <div className='boutonPdf'>Menu</div>
+               <div className='boutonPdf'>Plus d'info</div>
             </div>
             <div className="row">
                <div className="col-sm-8 col-md-8">
